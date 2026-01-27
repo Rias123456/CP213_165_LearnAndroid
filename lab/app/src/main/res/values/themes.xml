@@ -2,4 +2,6 @@
 <resources>
 
     <style name="Theme._165LabLeandAndriod" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme._165LabLearnAndroid" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
