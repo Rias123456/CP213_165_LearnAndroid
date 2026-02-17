@@ -31,7 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.a165lableandandriod.R  // ✅ สำคัญมาก
+import com.example.lablearnandroid.R
 
 val NeonPink = Color(0xFFFF006E)
 val NeonCyan = Color(0xFF00F5FF)
