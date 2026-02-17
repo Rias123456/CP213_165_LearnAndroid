@@ -2,6 +2,7 @@ package com.example.lablearnandroid
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -16,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,12 +32,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-import android.util.Log
+private const val CHARACTER_NAME_KEY = "character_name"
 
 class RPGCardActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPreferencesUtil.init(this)
         Log.i("Lifecycle", "MainActivity : onCreate")
         setContent {
             RPGCardView()
@@ -74,16 +77,39 @@ class RPGCardActivity : ComponentActivity() {
 
     @Composable
     fun RPGCardView() {
+        var characterName by remember {
+            mutableStateOf(SharedPreferencesUtil.getString(CHARACTER_NAME_KEY, "Cyber Knight"))
+        }
+        var str by remember { mutableStateOf(8) }
+        var agi by remember { mutableStateOf(10) }
+        var int by remember { mutableStateOf(15) }
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(color = Color.Gray)
-                .padding(32.dp)) {
-            // hp
-            Box(modifier = Modifier
-                .fillMaxWidth()
-                .height(32.dp)
-                .background(color = Color.White)
+                .padding(32.dp)
+        ) {
+            Text(text = "ชื่อตัวละคร: $characterName", fontSize = 20.sp)
+            OutlinedTextField(
+                value = characterName,
+                onValueChange = { characterName = it },
+                label = { Text("พิมพ์ชื่อตัวละคร") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp, bottom = 8.dp)
+            )
+            Button(onClick = {
+                SharedPreferencesUtil.saveString(CHARACTER_NAME_KEY, characterName)
+            }) {
+                Text(text = "บันทึกชื่อ")
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(32.dp)
+                    .background(color = Color.White)
             ) {
                 Text(
                     text = "hp",
@@ -94,7 +120,7 @@ class RPGCardActivity : ComponentActivity() {
                         .padding(8.dp)
                 )
             }
-            // image
+
             Image(
                 painter = painterResource(R.drawable.ic_profile),
                 contentDescription = "My Image",
@@ -106,24 +132,20 @@ class RPGCardActivity : ComponentActivity() {
                     }
             )
 
-            var str by remember { mutableStateOf(8) }
-            var agi by remember { mutableStateOf(10) }
-            var int by remember { mutableStateOf(15) }
-            // status
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column {
                     Button(onClick = {
-                        str = str + 1
+                        str += 1
                     }) {
                         Text(text = "+", fontSize = 32.sp)
                     }
                     Text(text = "Str", fontSize = 32.sp)
                     Text(text = str.toString(), fontSize = 32.sp)
                     Text(text = "-", fontSize = 32.sp, modifier = Modifier.clickable {
-                        str = str - 1
+                        str -= 1
                     })
                 }
                 Column {
@@ -144,4 +166,3 @@ class RPGCardActivity : ComponentActivity() {
         RPGCardView()
     }
 }
-
