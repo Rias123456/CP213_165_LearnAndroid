@@ -28,6 +28,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import android.util.Log
 import androidx.compose.ui.platform.LocalContext
+import com.example.lablearnandroid.R
 
 class PokedexActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
