@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">LabLearnAndroid</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <string name="title_activity_list">LIstActivity</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="title_activity_shared_preferences">SharedPreferencesActivity</string>
+    <string name="app_name">529LabLearnAndroid</string>
+    <string name="title_activity_main_weasel">MainWeasel</string>
 </resources>

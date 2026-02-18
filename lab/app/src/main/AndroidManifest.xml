@@ -12,61 +12,42 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LabLearnAndroid"
+        android:theme="@style/Theme._529LabLearnAndroid"
         tools:targetApi="31">
+        <activity
+            android:name=".MainWeasel"
+            android:exported="true"
+            android:label="@string/title_activity_main_weasel"
+            android:theme="@style/Theme._529LabLearnAndroid">
+        </activity>
+        <activity
+            android:name=".PokedexActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_weasel"
+            android:theme="@style/Theme._529LabLearnAndroid">
+        </activity>
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_weasel"
+            android:theme="@style/Theme._529LabLearnAndroid">
+        </activity>
         <activity
             android:name=".MenuActivity"
             android:exported="true"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.LabLearnAndroid" >
-
+            android:label="@string/title_activity_main_weasel"
+            android:theme="@style/Theme._529LabLearnAndroid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity
-            android:name=".PokedexActivity"
-            android:exported="false"
-            android:label="@string/title_activity_list"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
-            android:name=".LifeCycleComposeActivity"
-            android:exported="true"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.LabLearnAndroid"></activity>
-        <activity
-            android:name=".SharedPreferencesActivity"
-            android:exported="false"
-            android:label="SharedPreferences"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
-            android:name=".architecture.mvc.MvcCounterActivity"
-            android:exported="true"
-            android:label="MVC Counter"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
-            android:name=".architecture.mvp.MvpCounterActivity"
-            android:exported="true"
-            android:label="MVP Counter"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
-            android:name=".architecture.mvvm.MvvmCounterActivity"
-            android:exported="true"
-            android:label="MVVM Counter"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
-            android:name=".architecture.mvi.MviCounterActivity"
-            android:exported="true"
-            android:label="MVI Counter"
-            android:theme="@style/Theme.LabLearnAndroid" />
         <activity
             android:name=".RPGCardActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LabLearnAndroid">
+            android:theme="@style/Theme._529LabLearnAndroid">
         </activity>
     </application>
 
