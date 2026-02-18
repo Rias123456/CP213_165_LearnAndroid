@@ -122,7 +122,7 @@ class RPGCardActivity : ComponentActivity() {
             }
 
             Image(
-                painter = painterResource(R.drawable.ic_profile),
+                painter = painterResource(R.drawable.pic),
                 contentDescription = "My Image",
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
