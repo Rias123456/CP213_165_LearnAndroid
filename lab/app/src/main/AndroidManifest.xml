@@ -38,11 +38,6 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.LabLearnAndroid"></activity>
         <activity
-            android:name=".SharedPreferencesActivity"
-            android:exported="false"
-            android:label="SharedPreferences"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
             android:name=".architecture.mvc.MvcCounterActivity"
             android:exported="true"
             android:label="MVC Counter"
