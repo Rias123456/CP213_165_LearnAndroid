@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="แอปติวเตอร์ บ้านคุณครูเล็ก">
+
+  <!-- ✅ ทำให้เป็น Web App -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="บ้านคุณครูเล็ก">
+
+  <!-- ✅ ใช้ logo.png เป็น icon ทั้งหมด -->
+  <link rel="apple-touch-icon" href="icons/logo.png">
+  <link rel="icon" type="image/png" href="icons/logo.png"/>
+
+  <title>บ้านคุณครูเล็ก</title>
+
+  <!-- ✅ โหลด Manifest ที่เราแก้ให้แล้ว -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- ✅ FIREBASE SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCbI0QF1xmDZK9XUFq-0FZjYTMH8x5VF2Y",
+      authDomain: "bankrulek-95bb5.firebaseapp.com",
+      projectId: "bankrulek-95bb5",
+      storageBucket: "bankrulek-95bb5.firebasestorage.app",
+      messagingSenderId: "406570908743",
+      appId: "1:406570908743:web:765d7fe9c4eed33c5e8562",
+      measurementId: "G-WFDPJQM010"
+    };
+
+    initializeApp(firebaseConfig);
+    getAnalytics();
+  </script>
+  <!-- ✅ END FIREBASE SDK -->
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
