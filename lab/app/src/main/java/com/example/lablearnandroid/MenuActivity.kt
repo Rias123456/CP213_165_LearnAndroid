@@ -33,12 +33,24 @@ class MenuActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MenuScreen(
+                onOpenCameraFlow = {
+                    startActivity(Intent(this@MenuActivity, CameraPermissionActivity::class.java))
+                },
+                onOpenSensorStream = {
+                    startActivity(Intent(this@MenuActivity, SensorStreamActivity::class.java))
+                },
                 onOpenRpg = { startActivity(Intent(this@MenuActivity, RPGCardActivity::class.java)) },
                 onOpenPokedex = { startActivity(Intent(this@MenuActivity, PokedexActivity::class.java)) },
-                onOpenLifecycle = { startActivity(Intent(this@MenuActivity, LifeCycleComposeActivity::class.java)) },
-                onOpenMvvm = { startActivity(Intent(this@MenuActivity, MvvmCounterActivity::class.java)) },
+                onOpenLifecycle = {
+                    startActivity(Intent(this@MenuActivity, LifeCycleComposeActivity::class.java))
+                },
+                onOpenMvvm = {
+                    startActivity(Intent(this@MenuActivity, MvvmCounterActivity::class.java))
+                },
                 onOpenMvi = { startActivity(Intent(this@MenuActivity, MviCounterActivity::class.java)) },
-                onOpenSharedPrefs = { startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java)) },
+                onOpenSharedPrefs = {
+                    startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java))
+                },
             )
         }
     }
@@ -46,6 +58,8 @@ class MenuActivity : ComponentActivity() {
 
 @Composable
 private fun MenuScreen(
+    onOpenCameraFlow: () -> Unit,
+    onOpenSensorStream: () -> Unit,
     onOpenRpg: () -> Unit,
     onOpenPokedex: () -> Unit,
     onOpenLifecycle: () -> Unit,
@@ -54,12 +68,14 @@ private fun MenuScreen(
     onOpenSharedPrefs: () -> Unit,
 ) {
     val menuItems = listOf(
-        "🎮 RPG Card" to onOpenRpg,
-        "📘 Pokedex" to onOpenPokedex,
-        "🔄 Compose Lifecycle" to onOpenLifecycle,
-        "🧠 MVVM Counter" to onOpenMvvm,
-        "⚡ MVI Counter" to onOpenMvi,
-        "💾 SharedPreferences" to onOpenSharedPrefs,
+        "Camera Permission Flow" to onOpenCameraFlow,
+        "Sensor Stream MVVM" to onOpenSensorStream,
+        "RPG Card" to onOpenRpg,
+        "Pokedex" to onOpenPokedex,
+        "Compose Lifecycle" to onOpenLifecycle,
+        "MVVM Counter" to onOpenMvvm,
+        "MVI Counter" to onOpenMvi,
+        "SharedPreferences" to onOpenSharedPrefs,
     )
 
     Column(
